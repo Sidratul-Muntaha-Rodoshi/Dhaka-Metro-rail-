@@ -1,10 +1,13 @@
 package com.example.dhakametrorailoperations.Rinty;
 
+import commonClass.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class u7goal3Controller {
 
@@ -79,7 +82,8 @@ public class u7goal3Controller {
     }
 
     @javafx.fxml.FXML
-    public void handleback(ActionEvent actionEvent) {
-        statusLabel.setText("Going back to Dashboard...");
+    public void handleback(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchScene(actionEvent, "/com/example/dhakametrorailoperations/Rintyfxml/stationcontrollerdashboard-view.fxml");
     }
+
 }
