@@ -9,26 +9,24 @@ import javafx.scene.control.TextField;
 public class u7goal3Controller {
 
     @javafx.fxml.FXML
-    private ComboBox<String> gateIdCombo;
-    @javafx.fxml.FXML
-    private TextField currentModeField;
-    @javafx.fxml.FXML
-    private TextField gateStateField;
+    private ComboBox<String> gateCombo;
     @javafx.fxml.FXML
     private ComboBox<String> modeCombo;
+    @javafx.fxml.FXML
+    private TextField gateStatusField;
     @javafx.fxml.FXML
     private Label statusLabel;
 
     @javafx.fxml.FXML
-    private Button applyBtn;
+    private Button checkBtn;
     @javafx.fxml.FXML
-    private Button applyAllBtn;
+    private Button applyBtn;
     @javafx.fxml.FXML
     private Button Backbutton;
 
     @javafx.fxml.FXML
     public void initialize() {
-        gateIdCombo.getItems().addAll(
+        gateCombo.getItems().addAll(
                 "Gate-01",
                 "Gate-02",
                 "Gate-03",
@@ -37,22 +35,51 @@ public class u7goal3Controller {
         );
 
         modeCombo.getItems().addAll(
-                "Entry",
-                "Exit",
-                "Bidirectional",
+                "Entry Only",
+                "Exit Only",
+                "Entry & Exit",
                 "Closed"
         );
     }
 
     @javafx.fxml.FXML
-    public void handleApply(ActionEvent actionEvent) {
+    public void handleCheckGate(ActionEvent actionEvent) {
+        String gate = gateCombo.getValue();
+
+        if (gate == null) {
+            statusLabel.setText("Please select a gate first.");
+            return;
+        }
+
+        if (gate.equals("Gate-05")) {
+            gateStatusField.setText("Hardware Error");
+            statusLabel.setText("Gate-05 is not working.");
+        } else {
+            gateStatusField.setText("Working - Active");
+            statusLabel.setText(gate + " is ready.");
+        }
     }
 
     @javafx.fxml.FXML
-    public void handleApplyAll(ActionEvent actionEvent) {
+    public void handleApplyMode(ActionEvent actionEvent) {
+        String gate = gateCombo.getValue();
+        String mode = modeCombo.getValue();
+
+        if (gate == null || mode == null) {
+            statusLabel.setText("Please select both gate and mode.");
+            return;
+        }
+
+        if (gate.equals("Gate-05")) {
+            statusLabel.setText("Cannot change Gate-05 due to error.");
+        } else {
+            gateStatusField.setText(mode + " (" + (mode.equals("Closed") ? "Locked" : "Active") + ")");
+            statusLabel.setText(gate + " is now set to " + mode + ".");
+        }
     }
 
     @javafx.fxml.FXML
     public void handleback(ActionEvent actionEvent) {
+        statusLabel.setText("Going back to Dashboard...");
     }
 }
