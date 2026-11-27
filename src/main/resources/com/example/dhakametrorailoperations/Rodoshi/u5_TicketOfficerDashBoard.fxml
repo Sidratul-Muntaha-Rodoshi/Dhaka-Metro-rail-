@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="504.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rodoshi.u5_TicketOfficerDashBoardController">
+   <children>
+      <Button layoutX="77.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleIssueTicket" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Issue Ticket" />
+      <Button layoutX="77.0" layoutY="168.0" mnemonicParsing="false" onAction="#handleOverStayPenalty" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Over Stay Penalty" />
+      <Button layoutX="77.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleTicketReplacement" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Ticket Replacement" />
+      <Button layoutX="77.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleExtraFare" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Extra Fare" />
+      <Button layoutX="403.0" layoutY="168.0" mnemonicParsing="false" onAction="#handleVoidTicket" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Void Ticket" />
+      <Button layoutX="403.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleEquipmentFault" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Equipment Fault" />
+      <Button layoutX="403.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleCashReconciliation" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Cash Reconciliation" />
+      <Button layoutX="403.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleShiftClosing" prefHeight="55.0" prefWidth="167.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Shift Closing" />
+      <AnchorPane layoutY="-18.0" prefHeight="73.0" prefWidth="703.0" style="-fx-background-color: #006a4e;">
+         <children>
+            <Label layoutX="22.0" layoutY="22.0" prefHeight="43.0" prefWidth="291.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: black;" text="Ticket Counter Officer DashBoard" />
+            <Label fx:id="welcomeLabel" layoutX="415.0" layoutY="30.0" style="-fx-font-size: 15; -fx-text-fill: Black; -fx-font-weight: bold;" text="WelCome Officer" />
+            <Button alignment="CENTER" layoutX="610.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleLogOut" text="Log Out" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

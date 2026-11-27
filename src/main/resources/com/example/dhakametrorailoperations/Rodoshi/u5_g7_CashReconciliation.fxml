@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rodoshi.u5_g7_CashReconciliationController">
+
+    <Label layoutX="85.0" layoutY="75.0" text="Opening Cash" />
+    <TextField fx:id="openingCashTextField" layoutX="185.0" layoutY="70.0" prefWidth="140.0" />
+
+    <Label layoutX="95.0" layoutY="115.0" text="Ticket Sales" />
+    <TextField fx:id="ticketSalesTextField" layoutX="185.0" layoutY="110.0" prefWidth="140.0" />
+
+    <Label layoutX="100.0" layoutY="155.0" text="Extra Fare" />
+    <TextField fx:id="extraFareTextField" layoutX="185.0" layoutY="150.0" prefWidth="140.0" />
+
+    <Label layoutX="365.0" layoutY="75.0" text="Counted Cash" />
+    <TextField fx:id="countedCashTextField" layoutX="455.0" layoutY="70.0" prefWidth="115.0" />
+
+    <Label layoutX="395.0" layoutY="115.0" text="Reason" />
+    <TextField fx:id="reasonTextField" layoutX="455.0" layoutY="110.0" prefWidth="115.0" />
+
+    <Button layoutX="185.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleCheckCash" prefWidth="115.0" text="Check Cash" />
+    <Button layoutX="315.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleSaveCashCheck" prefWidth="125.0" text="Save Cash Check" />
+    <Button layoutX="455.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleBack" prefWidth="75.0" text="Back" />
+
+    <Label fx:id="statusLabel" layoutX="185.0" layoutY="255.0" prefWidth="385.0" text="" />
+
+</AnchorPane>

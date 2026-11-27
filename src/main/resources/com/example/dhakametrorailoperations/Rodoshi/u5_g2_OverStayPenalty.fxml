@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rodoshi.u5_g2_OverStayPenaltyController">
+    <children>
+        <Text layoutX="80.0" layoutY="103.0" text="Ticket Id" />
+        <TextField fx:id="ticketIdTextField" layoutX="145.0" layoutY="85.0" prefWidth="150.0" />
+
+        <Text layoutX="80.0" layoutY="143.0" text="Over Stay" />
+        <TextField fx:id="overStayTextField" layoutX="145.0" layoutY="125.0" prefWidth="150.0" />
+        <ComboBox fx:id="paymentMethodComboBox" layoutX="425.0" layoutY="85.0" prefWidth="135.0" promptText="payment Method" />
+
+        <Button layoutX="145.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleOverStayPenalty" prefWidth="120.0" text="Over stay penalty" />
+        <Label fx:id="penaltyAmountLabel" layoutX="295.0" layoutY="179.0" prefWidth="150.0" text="Penalty Amount" />
+
+        <Button layoutX="455.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleBack" prefWidth="75.0" text="Back" />
+    </children>
+</AnchorPane>
