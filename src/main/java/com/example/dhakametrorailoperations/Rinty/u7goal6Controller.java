@@ -1,11 +1,13 @@
 package com.example.dhakametrorailoperations.Rinty;
 
+import commonClass.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import java.io.IOException;
 
 public class u7goal6Controller {
 
@@ -15,52 +17,50 @@ public class u7goal6Controller {
     private TextField gateStatusField;
     @javafx.fxml.FXML
     private PasswordField pinField;
-    @javafx.fxml.FXML
-    private Label statusLabel;
 
-    @javafx.fxml.FXML
-    private Button checkBtn;
     @javafx.fxml.FXML
     private Button unlockBtn;
     @javafx.fxml.FXML
     private Button Backbutton;
 
-    public void initialize() {
-        emergencyCombo.getItems().addAll("Fire Alarm", "Earthquake Alert", "Power Failure", "Crowd Evacuation");
-    }
-
     @javafx.fxml.FXML
-    public void handleCheckGates(ActionEvent actionEvent) {
-        String emergency = emergencyCombo.getValue();
-
-        if (emergency == null) {
-            statusLabel.setText("Please select an emergency type first.");
-            return;
-        }
-
-        gateStatusField.setText("Locked - Power Normal");
-        statusLabel.setText("Gates are ready. Enter Emergency PIN to unlock.");
+    public void initialize() {
+        emergencyCombo.getItems().addAll(
+                "Fire Alarm Triggered",
+                "Earthquake Alert",
+                "Power Failure",
+                "Medical / Crowd Evacuation"
+        );
     }
 
     @javafx.fxml.FXML
     public void handleUnlockAll(ActionEvent actionEvent) {
-        String status = gateStatusField.getText();
-        String pin = pinField.getText();
+        String emergency = emergencyCombo.getValue();
+        String pin = pinField.getText().trim();
 
-        if (status.isEmpty()) {
-            statusLabel.setText("Please check gates first.");
-            return;
-        }
-        if (!pin.equals("9999")) {
-            statusLabel.setText("Wrong Emergency PIN! Try 9999.");
+        if (emergency == null) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Selection Missing", "Please select an emergency type first.");
             return;
         }
 
-        gateStatusField.setText("ALL GATES UNLOCKED");
-        statusLabel.setText("Emergency: All ticket gates unlocked for free exit!");
+        if (pin.isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "PIN Required", "Please enter the Emergency PIN.");
+            return;
+        }
+
+        if (pin.equals("9999")) {
+            gateStatusField.setText("UNLOCKED (" + emergency + ")");
+            u7goal6 record = new u7goal6(emergency, gateStatusField.getText(), pin);
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Gates Unlocked", "All ticket gates unlocked for " + emergency + "!");
+            pinField.clear();
+        } else {
+            gateStatusField.setText("LOCKED (Invalid PIN)");
+            AlertHelper.showAlert(Alert.AlertType.ERROR, "Invalid PIN", "Incorrect Emergency PIN! Gates remain locked.");
+        }
     }
 
     @javafx.fxml.FXML
-    public void handleback(ActionEvent actionEvent) {
+    public void handleback(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchScene(actionEvent, "/com/example/dhakametrorailoperations/Rintyfxml/stationcontrollerdashboard-view.fxml");
     }
 }
