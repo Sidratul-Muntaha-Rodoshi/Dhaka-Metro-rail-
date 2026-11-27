@@ -4,12 +4,11 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="560.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u8goal3Controller">
+<AnchorPane prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u8goal3Controller">
     <children>
         <Label layoutX="25.0" layoutY="20.0" text="Match Digital Ticket &amp; MRT Pass Payments">
             <font>
@@ -17,37 +16,30 @@
             </font>
         </Label>
 
-        <Label layoutX="25.0" layoutY="65.0" text="Payment Provider:" />
-        <ComboBox fx:id="providerCombo" layoutX="135.0" layoutY="61.0" onAction="#handleProviderSelect" prefWidth="150.0" promptText="Select Provider" />
+        <Label layoutX="25.0" layoutY="70.0" text="Transaction ID:" />
+        <TextField fx:id="trxIdField" layoutX="150.0" layoutY="66.0" prefWidth="200.0" promptText="e.g. TRX-101" />
 
-        <Label layoutX="310.0" layoutY="65.0" text="Transaction Date:" />
-        <DatePicker fx:id="datePicker" layoutX="415.0" layoutY="61.0" prefWidth="150.0" />
+        <Label layoutX="25.0" layoutY="115.0" text="Payment Provider:" />
+        <ComboBox fx:id="providerCombo" layoutX="150.0" layoutY="111.0" prefWidth="200.0" promptText="Select Provider" />
 
-        <Button fx:id="autoMatchBtn" layoutX="585.0" layoutY="61.0" onAction="#handleAutoMatch" text="Auto-Match" />
+        <Label layoutX="25.0" layoutY="160.0" text="Transaction Date:" />
+        <DatePicker fx:id="datePicker" layoutX="150.0" layoutY="156.0" prefWidth="200.0" />
 
-        <TableView fx:id="transactionTable" layoutX="25.0" layoutY="105.0" prefHeight="240.0" prefWidth="670.0">
-            <columns>
-                <TableColumn fx:id="trxIdCol" prefWidth="130.0" text="Transaction ID" />
-                <TableColumn fx:id="providerCol" prefWidth="120.0" text="Provider" />
-                <TableColumn fx:id="typeCol" prefWidth="140.0" text="Payment Type" />
-                <TableColumn fx:id="amountCol" prefWidth="130.0" text="Amount (BDT)" />
-                <TableColumn fx:id="matchStatusCol" prefWidth="145.0" text="Match Status" />
-            </columns>
-        </TableView>
+        <Label layoutX="25.0" layoutY="205.0" text="Payment Type:" />
+        <ComboBox fx:id="typeCombo" layoutX="150.0" layoutY="201.0" prefWidth="200.0" promptText="Select Type" />
 
-        <Label layoutX="25.0" layoutY="365.0" text="Matched Total (BDT):" />
-        <Label fx:id="matchedTotalLabel" layoutX="150.0" layoutY="365.0" text="0.00" />
+        <Label layoutX="25.0" layoutY="250.0" text="Amount (BDT):" />
+        <TextField fx:id="amountField" layoutX="150.0" layoutY="246.0" prefWidth="200.0" promptText="Enter Amount" />
 
-        <Label layoutX="260.0" layoutY="365.0" text="Bank Fee (BDT):" />
-        <Label fx:id="bankFeeLabel" layoutX="355.0" layoutY="365.0" text="0.00" />
+        <Label layoutX="25.0" layoutY="300.0" text="Matched Total (BDT):" />
+        <Label fx:id="matchedTotalLabel" layoutX="155.0" layoutY="300.0" text="0.0" />
 
-        <Label layoutX="460.0" layoutY="365.0" text="Discrepancy:" />
-        <Label fx:id="discrepancyLabel" layoutX="540.0" layoutY="365.0" text="None" />
+        <Label layoutX="270.0" layoutY="300.0" text="Bank Fee (2%):" />
+        <Label fx:id="bankFeeLabel" layoutX="360.0" layoutY="300.0" text="0.0" />
 
-        <Button fx:id="viewUnmatchedBtn" layoutX="25.0" layoutY="415.0" onAction="#handleViewUnmatched" text="View Unmatched" />
-        <Button fx:id="confirmBtn" layoutX="155.0" layoutY="415.0" onAction="#handleConfirmReconciliation" text="Confirm Reconciliation" />
-        <Button fx:id="Backbutton" layoutX="315.0" layoutY="415.0" onAction="#handleback" text="Back" />
-
-        <Label fx:id="statusLabel" layoutX="25.0" layoutY="475.0" text="Select a payment provider and date, then click Auto-Match." />
+        <Button fx:id="addTrxBtn" layoutX="25.0" layoutY="350.0" onAction="#handleAddTransaction" text="Add Transaction" />
+        <Button fx:id="autoMatchBtn" layoutX="150.0" layoutY="350.0" onAction="#handleAutoMatch" text="Auto-Match" />
+        <Button fx:id="confirmBtn" layoutX="250.0" layoutY="350.0" onAction="#handleConfirmReconciliation" text="Confirm Reconciliation" />
+        <Button fx:id="Backbutton" layoutX="410.0" layoutY="350.0" onAction="#handleback" text="Back" />
     </children>
 </AnchorPane>
