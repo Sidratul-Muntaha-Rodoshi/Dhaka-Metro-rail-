@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u8goal3Controller">
+    <children>
+        <Label layoutX="25.0" layoutY="20.0" text="Match Digital Ticket &amp; MRT Pass Payments">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="25.0" layoutY="65.0" text="Payment Provider:" />
+        <ComboBox fx:id="providerCombo" layoutX="135.0" layoutY="61.0" onAction="#handleProviderSelect" prefWidth="150.0" promptText="Select Provider" />
+
+        <Label layoutX="310.0" layoutY="65.0" text="Transaction Date:" />
+        <DatePicker fx:id="datePicker" layoutX="415.0" layoutY="61.0" prefWidth="150.0" />
+
+        <Button fx:id="autoMatchBtn" layoutX="585.0" layoutY="61.0" onAction="#handleAutoMatch" text="Auto-Match" />
+
+        <TableView fx:id="transactionTable" layoutX="25.0" layoutY="105.0" prefHeight="240.0" prefWidth="670.0">
+            <columns>
+                <TableColumn fx:id="trxIdCol" prefWidth="130.0" text="Transaction ID" />
+                <TableColumn fx:id="providerCol" prefWidth="120.0" text="Provider" />
+                <TableColumn fx:id="typeCol" prefWidth="140.0" text="Payment Type" />
+                <TableColumn fx:id="amountCol" prefWidth="130.0" text="Amount (BDT)" />
+                <TableColumn fx:id="matchStatusCol" prefWidth="145.0" text="Match Status" />
+            </columns>
+        </TableView>
+
+        <Label layoutX="25.0" layoutY="365.0" text="Matched Total (BDT):" />
+        <Label fx:id="matchedTotalLabel" layoutX="150.0" layoutY="365.0" text="0.00" />
+
+        <Label layoutX="260.0" layoutY="365.0" text="Bank Fee (BDT):" />
+        <Label fx:id="bankFeeLabel" layoutX="355.0" layoutY="365.0" text="0.00" />
+
+        <Label layoutX="460.0" layoutY="365.0" text="Discrepancy:" />
+        <Label fx:id="discrepancyLabel" layoutX="540.0" layoutY="365.0" text="None" />
+
+        <Button fx:id="viewUnmatchedBtn" layoutX="25.0" layoutY="415.0" onAction="#handleViewUnmatched" text="View Unmatched" />
+        <Button fx:id="confirmBtn" layoutX="155.0" layoutY="415.0" onAction="#handleConfirmReconciliation" text="Confirm Reconciliation" />
+        <Button fx:id="Backbutton" layoutX="315.0" layoutY="415.0" onAction="#handleback" text="Back" />
+
+        <Label fx:id="statusLabel" layoutX="25.0" layoutY="475.0" text="Select a payment provider and date, then click Auto-Match." />
+    </children>
+</AnchorPane>

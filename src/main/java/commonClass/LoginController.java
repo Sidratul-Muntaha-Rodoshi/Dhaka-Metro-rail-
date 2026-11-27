@@ -83,7 +83,7 @@ public class LoginController
             case "Data Analyst Officer" -> "/dataanalyst/DataAnalystDashboard.fxml";
             case "Ticket Counter Officer" -> "/ticketcounter/TicketCounterDashboard.fxml";
             case "Metro Train Operator" -> "/trainoperator/TrainOperatorDashboard.fxml";
-            case "Station Controller" -> "/stationcontroller/StationControllerDashboard.fxml";
+            case "Station Controller" -> "/com/example/dhakametrorailoperations/Rintyfxml/stationcontrollerdashboard-view.fxml";
             case "Central Finance Officer" -> "/finance/FinanceOfficerDashboard.fxml";
             default -> "";
         };

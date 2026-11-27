@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal2Controller">
+    <children>
+        <Label layoutX="30.0" layoutY="25.0" text="Control Platform Screen Doors (PSD)">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="30.0" layoutY="75.0" text="Platform &amp; Door Zone:" />
+        <ComboBox fx:id="platformZoneCombo" layoutX="180.0" layoutY="71.0" prefWidth="230.0" promptText="Select Platform Zone" />
+
+        <Label layoutX="30.0" layoutY="120.0" text="Door Action Mode:" />
+        <ComboBox fx:id="doorCommandCombo" layoutX="180.0" layoutY="116.0" prefWidth="230.0" promptText="Select Door Command" />
+
+        <Label layoutX="30.0" layoutY="165.0" text="Sensor Check:" />
+        <TextField fx:id="sensorStatusField" editable="false" layoutX="180.0" layoutY="161.0" prefWidth="230.0" />
+
+        <Label layoutX="30.0" layoutY="210.0" text="Current Door State:" />
+        <TextField fx:id="doorStateField" editable="false" layoutX="180.0" layoutY="206.0" prefWidth="230.0" />
+
+        <Label layoutX="30.0" layoutY="255.0" text="Security Key:" />
+        <PasswordField fx:id="securityKeyField" layoutX="180.0" layoutY="251.0" prefWidth="230.0" promptText="Enter Key (e.g. 1234)" />
+
+        <Button fx:id="checkSafetyBtn" layoutX="30.0" layoutY="310.0" onAction="#handleCheckSafety" text="Check Door Safety" />
+        <Button fx:id="applyCommandBtn" layoutX="160.0" layoutY="310.0" onAction="#handleApplyDoorCommand" text="Apply Door Action" />
+        <Button fx:id="Backbutton" layoutX="295.0" layoutY="310.0" onAction="#handleback" text="Back" />
+
+        <Label fx:id="statusLabel" layoutX="30.0" layoutY="365.0" text="Select platform zone and door command." />
+    </children>
+</AnchorPane>

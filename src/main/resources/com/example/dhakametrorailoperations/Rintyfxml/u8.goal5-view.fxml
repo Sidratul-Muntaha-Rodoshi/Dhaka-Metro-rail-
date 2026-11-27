@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u8goal5Controller">
+    <children>
+        <Label layoutX="30.0" layoutY="25.0" text="Resolve Cash Difference">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="30.0" layoutY="75.0" text="Select Mismatch Shift:" />
+        <ComboBox fx:id="shiftIdCombo" layoutX="180.0" layoutY="71.0" prefWidth="220.0" promptText="Choose Shift ID" />
+
+        <Label layoutX="30.0" layoutY="120.0" text="Cashier &amp; Station:" />
+        <TextField fx:id="cashierStationField" editable="false" layoutX="180.0" layoutY="116.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="165.0" text="Expected Cash (BDT):" />
+        <TextField fx:id="expectedCashField" editable="false" layoutX="180.0" layoutY="161.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="210.0" text="Submitted Cash (BDT):" />
+        <TextField fx:id="submittedCashField" editable="false" layoutX="180.0" layoutY="206.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="255.0" text="Discrepancy Reason:" />
+        <ComboBox fx:id="reasonCombo" layoutX="180.0" layoutY="251.0" prefWidth="220.0" promptText="Select Reason" />
+
+        <Label layoutX="30.0" layoutY="300.0" text="Adjustment Note:" />
+        <TextField fx:id="noteField" layoutX="180.0" layoutY="296.0" prefWidth="220.0" promptText="Enter adjustment note" />
+
+        <Button fx:id="reviewBtn" layoutX="30.0" layoutY="355.0" onAction="#handleReviewDetails" text="Review Details" />
+        <Button fx:id="resolveBtn" layoutX="150.0" layoutY="355.0" onAction="#handleResolveDifference" text="Resolve Difference" />
+        <Button fx:id="Backbutton" layoutX="295.0" layoutY="355.0" onAction="#handleback" text="Back" />
+
+        <Label fx:id="statusLabel" layoutX="30.0" layoutY="410.0" text="Select a Shift ID to review cash difference." />
+    </children>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="540.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal1Controller">
+    <children>
+        <Label layoutX="30.0" layoutY="15.0" text="Approve Train Arrival and Departure">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="trainIdField" layoutX="30.0" layoutY="55.0" prefWidth="130.0" promptText="Train ID" />
+        <ComboBox fx:id="routeCombo" layoutX="170.0" layoutY="55.0" prefWidth="175.0" promptText="Select Route" />
+        <TextField fx:id="timeField" layoutX="355.0" layoutY="55.0" prefWidth="130.0" promptText="Time (09:10 AM)" />
+        <Button fx:id="addTrainBtn" layoutX="500.0" layoutY="55.0" onAction="#handleAddTrain" prefWidth="120.0" text="Add to Queue" />
+
+        <TableView fx:id="trainTable" layoutX="30.0" layoutY="100.0" prefHeight="195.0" prefWidth="590.0">
+            <columns>
+                <TableColumn fx:id="trainIdCol" prefWidth="110.0" text="Train ID" />
+                <TableColumn fx:id="routeCol" prefWidth="190.0" text="Route" />
+                <TableColumn fx:id="timeCol" prefWidth="120.0" text="Scheduled Time" />
+                <TableColumn fx:id="statusCol" prefWidth="168.0" text="Status" />
+            </columns>
+        </TableView>
+
+        <Label layoutX="30.0" layoutY="320.0" text="Assign Platform:" />
+        <ComboBox fx:id="platformCombo" layoutX="150.0" layoutY="316.0" prefWidth="200.0" promptText="Select Platform" />
+
+        <Label layoutX="30.0" layoutY="365.0" text="Controller PIN:" />
+        <PasswordField fx:id="pinField" layoutX="150.0" layoutY="361.0" prefWidth="200.0" promptText="Enter PIN (1234)" />
+
+        <Button fx:id="checkTrackBtn" layoutX="30.0" layoutY="415.0" onAction="#handleCheckTrack" text="Check Track Safety" />
+        <Button fx:id="approveBtn" layoutX="170.0" layoutY="415.0" onAction="#handleApproveTrain" text="Approve Clearance" />
+        <Button fx:id="Backbutton" layoutX="315.0" layoutY="415.0" onAction="#handleback" text="Back" />
+
+        <Label fx:id="statusLabel" layoutX="30.0" layoutY="465.0" text="Add a train to the queue, then select it to assign a platform." />
+    </children>
+</AnchorPane>
