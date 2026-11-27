@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="380.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal6Controller">
+    <children>
+        <Label layoutX="30.0" layoutY="25.0" text="Unlock All Ticket Gates During Emergencies">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="30.0" layoutY="80.0" text="Emergency Type:" />
+        <ComboBox fx:id="emergencyCombo" layoutX="170.0" layoutY="76.0" prefWidth="240.0" promptText="Select Emergency" />
+
+        <Label layoutX="30.0" layoutY="130.0" text="Gate Status:" />
+        <TextField fx:id="gateStatusField" editable="false" layoutX="170.0" layoutY="126.0" prefWidth="240.0" />
+
+        <Label layoutX="30.0" layoutY="180.0" text="Emergency PIN:" />
+        <PasswordField fx:id="pinField" layoutX="170.0" layoutY="176.0" prefWidth="240.0" promptText="Enter PIN (9999)" />
+
+        <Button fx:id="unlockBtn" layoutX="30.0" layoutY="240.0" onAction="#handleUnlockAll" text="Unlock All Gates" />
+        <Button fx:id="Backbutton" layoutX="160.0" layoutY="240.0" onAction="#handleback" text="Back" />
+    </children>
+</AnchorPane>
