@@ -2,9 +2,9 @@ package com.example.dhakametrorailoperations.Rinty;
 
 import commonClass.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
@@ -16,8 +16,6 @@ public class u7goal4Controller {
     private ComboBox<String> levelCombo;
     @javafx.fxml.FXML
     private TextField crowdStatusField;
-    @javafx.fxml.FXML
-    private Label statusLabel;
 
     @javafx.fxml.FXML
     private Button checkBtn;
@@ -46,19 +44,19 @@ public class u7goal4Controller {
         String area = areaCombo.getValue();
 
         if (area == null) {
-            statusLabel.setText("Please select a station area first.");
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Selection Missing", "Please select a station area first.");
             return;
         }
 
         if (area.equals("North Gate & Escalator")) {
             crowdStatusField.setText("Very Crowded (96% Full)");
-            statusLabel.setText("Alert: High crowd! Select Level 3 to hold crowd.");
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "High Crowd Alert", "High crowd detected! Select Level 3 to hold crowd.");
         } else if (area.equals("South Gate & Escalator")) {
             crowdStatusField.setText("Busy (75% Full)");
-            statusLabel.setText("Moderate crowd. Ready to apply control.");
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Crowd Status", "Moderate crowd. Ready to apply control.");
         } else {
             crowdStatusField.setText("Normal (45% Full)");
-            statusLabel.setText("Crowd is normal.");
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Crowd Status", "Crowd flow is normal.");
         }
     }
 
@@ -69,15 +67,16 @@ public class u7goal4Controller {
         String crowd = crowdStatusField.getText();
 
         if (area == null || level == null) {
-            statusLabel.setText("Please select both area and control level.");
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Selection Missing", "Please select both area and control level.");
             return;
         }
 
         if (crowd.contains("Very Crowded") && !level.startsWith("Level 3")) {
-            statusLabel.setText("Area is very crowded! Choose Level 3: Hold Crowd at Gate.");
+            AlertHelper.showAlert(Alert.AlertType.ERROR, "Invalid Level", "Area is very crowded! Choose Level 3: Hold Crowd at Gate.");
         } else {
             crowdStatusField.setText("Controlled (" + level + ")");
-            statusLabel.setText(level + " applied to " + area + ".");
+            u7goal4 record = new u7goal4(area, level, crowdStatusField.getText());
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Success", level + " applied to " + area + ".");
         }
     }
 
