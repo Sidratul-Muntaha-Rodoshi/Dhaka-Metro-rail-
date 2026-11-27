@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rodoshi.u6_TrainOperatorDashBoardController">
+   <children>
+      <AnchorPane layoutX="-2.0" prefHeight="63.0" prefWidth="633.0" style="-fx-background-color: #006a4e;">
+         <children>
+            <Label layoutX="42.0" layoutY="23.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Train Operator Dash Board" />
+            <Label fx:id="welcomeLabel" layoutX="318.0" layoutY="23.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Welcome Operator" />
+            <Button layoutX="524.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleLogOut" text="Log Out" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="96.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleSafetyCheck" prefHeight="71.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="Safety Check" />
+      <Button layoutX="96.0" layoutY="165.0" mnemonicParsing="false" onAction="#handleStartTrip" prefHeight="63.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="Start Trip" />
+      <Button layoutX="96.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleStationTiming" prefHeight="63.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="Station Timing" />
+      <Button layoutX="96.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleReportTrainFault" prefHeight="63.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="Report Train Fault" />
+      <Button layoutX="394.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleReportEmergency" prefHeight="63.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="Report Emergency" />
+      <Button layoutX="394.0" layoutY="165.0" mnemonicParsing="false" onAction="#handlePsdProblem" prefHeight="63.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="PSD Problem" />
+      <Button layoutX="394.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleTrainControlIssue" prefHeight="63.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="Train Control Issue" />
+      <Button layoutX="394.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleTripReport" prefHeight="63.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Trip Report" />
+   </children>
+</AnchorPane>
