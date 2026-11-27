@@ -1,7 +1,6 @@
 package com.example.dhakametrorailoperations.Rinty;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import commonClass.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -9,20 +8,29 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import java.util.ArrayList;
 
 public class u7goal1Controller {
 
     @javafx.fxml.FXML
-    private TableView<TrainRow> trainTable;
+    private TextField trainIdField;
     @javafx.fxml.FXML
-    private TableColumn<TrainRow, String> trainIdCol;
+    private ComboBox<String> routeCombo;
     @javafx.fxml.FXML
-    private TableColumn<TrainRow, String> routeCol;
+    private TextField timeField;
+
     @javafx.fxml.FXML
-    private TableColumn<TrainRow, String> timeCol;
+    private TableView<u7goal1> trainTable;
     @javafx.fxml.FXML
-    private TableColumn<TrainRow, String> statusCol;
+    private TableColumn<u7goal1, String> trainIdCol;
+    @javafx.fxml.FXML
+    private TableColumn<u7goal1, String> routeCol;
+    @javafx.fxml.FXML
+    private TableColumn<u7goal1, String> timeCol;
+    @javafx.fxml.FXML
+    private TableColumn<u7goal1, String> statusCol;
 
     @javafx.fxml.FXML
     private ComboBox<String> platformCombo;
@@ -32,34 +40,50 @@ public class u7goal1Controller {
     private Label statusLabel;
 
     @javafx.fxml.FXML
+    private Button addTrainBtn;
+    @javafx.fxml.FXML
     private Button checkTrackBtn;
     @javafx.fxml.FXML
     private Button approveBtn;
     @javafx.fxml.FXML
     private Button Backbutton;
 
-    private final ObservableList<TrainRow> trainList = FXCollections.observableArrayList();
+    private ArrayList<u7goal1> trainList = new ArrayList<>();
     private boolean isTrackClear = false;
 
     public void initialize() {
+        routeCombo.getItems().addAll("Uttara - Motijheel", "Motijheel - Uttara", "Agargaon - Motijheel");
         platformCombo.getItems().addAll("Platform 1", "Platform 2", "Platform 3 (Maintenance)");
 
         trainIdCol.setCellValueFactory(new PropertyValueFactory<>("trainId"));
         routeCol.setCellValueFactory(new PropertyValueFactory<>("route"));
         timeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
+    }
 
-        trainList.addAll(
-                new TrainRow("Train-101", "Uttara - Motijheel", "09:10 AM", "Waiting"),
-                new TrainRow("Train-102", "Motijheel - Uttara", "09:20 AM", "Waiting"),
-                new TrainRow("Train-103", "Agargaon - Motijheel", "09:30 AM", "Waiting")
-        );
-        trainTable.setItems(trainList);
+    @javafx.fxml.FXML
+    public void handleAddTrain(ActionEvent actionEvent) {
+        String id = trainIdField.getText().trim();
+        String route = routeCombo.getValue();
+        String time = timeField.getText().trim();
+
+        if (id.isEmpty() || route == null || time.isEmpty()) {
+            statusLabel.setText("Please enter Train ID, Route, and Time.");
+            return;
+        }
+
+        trainList.add(new u7goal1(id, route, time, "Waiting"));
+        trainTable.getItems().clear();
+        trainTable.getItems().addAll(trainList);
+
+        trainIdField.clear();
+        timeField.clear();
+        statusLabel.setText("Train " + id + " added to waiting list.");
     }
 
     @javafx.fxml.FXML
     public void handleCheckTrack(ActionEvent actionEvent) {
-        TrainRow selectedTrain = trainTable.getSelectionModel().getSelectedItem();
+        u7goal1 selectedTrain = trainTable.getSelectionModel().getSelectedItem();
         String platform = platformCombo.getValue();
 
         if (selectedTrain == null || platform == null) {
@@ -78,7 +102,7 @@ public class u7goal1Controller {
 
     @javafx.fxml.FXML
     public void handleApproveTrain(ActionEvent actionEvent) {
-        TrainRow selectedTrain = trainTable.getSelectionModel().getSelectedItem();
+        u7goal1 selectedTrain = trainTable.getSelectionModel().getSelectedItem();
         String platform = platformCombo.getValue();
         String pin = pinField.getText();
 
@@ -96,33 +120,15 @@ public class u7goal1Controller {
         }
 
         selectedTrain.setStatus("Approved (" + platform + ")");
-        trainTable.refresh();
+        trainTable.getItems().clear();
+        trainTable.getItems().addAll(trainList);
+
         isTrackClear = false;
         statusLabel.setText("Clearance issued for " + selectedTrain.getTrainId() + "!");
     }
 
     @javafx.fxml.FXML
     public void handleback(ActionEvent actionEvent) {
-        statusLabel.setText("Returning to Station Controller Dashboard...");
-    }
-
-    public static class TrainRow {
-        private String trainId;
-        private String route;
-        private String time;
-        private String status;
-
-        public TrainRow(String trainId, String route, String time, String status) {
-            this.trainId = trainId;
-            this.route = route;
-            this.time = time;
-            this.status = status;
-        }
-
-        public String getTrainId() { return trainId; }
-        public String getRoute() { return route; }
-        public String getTime() { return time; }
-        public String getStatus() { return status; }
-        public void setStatus(String status) { this.status = status; }
+        SceneSwitcher.switchScene(actionEvent, "com.examples.stationcontrollerdashboard-view.fxml");
     }
 }
