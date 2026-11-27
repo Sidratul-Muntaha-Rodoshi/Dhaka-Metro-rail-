@@ -64,8 +64,6 @@ public class u5_g6_EquipmentFaultController {
 
     @FXML
     public void handleBack(ActionEvent event) throws IOException {
-
-        HelperSwitch.SceneSwitch(event,
-                "com./com/example/dhakametrorailoperations/Rodoshi/u5_TicketOfficerDashBoardController");
+        HelperSwitch.SceneSwitch(event, "/com/example/dhakametrorailoperations/Rodoshi/u5_TicketOfficerDashBoard.fxml");
     }
 }

@@ -1,6 +1,7 @@
 package com.example.dhakametrorailoperations.Rodoshi;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -8,21 +9,28 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class u5_g4_ExtraFareController
-{
-    @javafx.fxml.FXML
+public class u5_g4_ExtraFareController {
+
+    @FXML
     private TextField ticketIdTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField paymentAmountTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private ComboBox<String> originalDestinationComboBox;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label extraFareLabel;
+
     private ArrayList<ExtraFare> extraFareList = new ArrayList<>();
+
     private int extraFare = 0;
 
-    @javafx.fxml.FXML
+
+    @FXML
     public void initialize() {
+
         originalDestinationComboBox.getItems().addAll(
                 "Uttara North - 50 Tk",
                 "Uttara Center - 40 Tk",
@@ -34,14 +42,10 @@ public class u5_g4_ExtraFareController
         extraFareLabel.setText("Extra Fare: 0 Tk");
     }
 
-    @javafx.fxml.FXML
-    public void handleBack(ActionEvent event) throws IOException {
-        HelperSwitch.SceneSwitch(event,"" +
-                "/com/example/dhakametrorailoperations/Rodoshi/TicketOfficerDashBoard.fxml");
-    }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleExtraFare() {
+
         if (ticketIdTextField.getText().isEmpty() ||
                 originalDestinationComboBox.getValue() == null) {
             return;
@@ -69,8 +73,10 @@ public class u5_g4_ExtraFareController
         extraFareLabel.setText("Extra Fare: " + extraFare + " Tk");
     }
 
-    @javafx.fxml.FXML
+
+    @FXML
     public void handleConfirmPayment() {
+
         if (ticketIdTextField.getText().isEmpty() ||
                 originalDestinationComboBox.getValue() == null ||
                 paymentAmountTextField.getText().isEmpty()) {
@@ -100,5 +106,11 @@ public class u5_g4_ExtraFareController
         extraFareLabel.setText(
                 "Payment Successful: " + paymentAmount + " Tk"
         );
+    }
+
+
+    @FXML
+    public void handleBack(ActionEvent event) throws IOException {
+        HelperSwitch.SceneSwitch(event, "/com/example/dhakametrorailoperations/Rodoshi/u5_TicketOfficerDashBoard.fxml");
     }
 }

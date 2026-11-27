@@ -30,8 +30,7 @@ public class u5_g5_VoidTicketController
 
     @javafx.fxml.FXML
     public void handleBack(ActionEvent event) throws IOException {
-        HelperSwitch.SceneSwitch(event,
-                "/com/example/dhakametrorailoperations/Rodoshi/TicketOfficerDashBoard.fxml");
+        HelperSwitch.SceneSwitch(event, "/com/example/dhakametrorailoperations/Rodoshi/u5_TicketOfficerDashBoard.fxml");
     }
 
     @javafx.fxml.FXML

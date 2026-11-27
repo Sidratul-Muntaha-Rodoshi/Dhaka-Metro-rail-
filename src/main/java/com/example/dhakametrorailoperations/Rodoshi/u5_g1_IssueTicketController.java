@@ -1,6 +1,7 @@
 package com.example.dhakametrorailoperations.Rodoshi;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -63,6 +64,9 @@ public class u5_g1_IssueTicketController
         String paymentMethod = paymentMethodComboBox.getValue();
 
         if (origin.equals(destination)) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Origin and Destination cannot be same");
+            a.showAndWait();
             return;
         }
 
