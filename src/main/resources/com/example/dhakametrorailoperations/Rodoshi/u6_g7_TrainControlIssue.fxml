@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rodoshi.u6_g7_TrainControlIssueController">
+    <children>
+        <ComboBox fx:id="problemTypeComboBox" layoutX="235.0" layoutY="60.0" prefWidth="180.0" promptText="Problem Type" />
+
+        <ComboBox fx:id="zoneComboBox" layoutX="235.0" layoutY="105.0" prefWidth="180.0" promptText="Zone" />
+
+        <Text layoutX="155.0" layoutY="168.0" text="Speed" />
+        <TextField fx:id="speedTextField" layoutX="235.0" layoutY="150.0" prefWidth="180.0" />
+
+        <Text layoutX="150.0" layoutY="213.0" text="Remarks" />
+        <TextField fx:id="remarksTextField" layoutX="235.0" layoutY="195.0" prefWidth="180.0" />
+
+        <Label fx:id="reportStatusLabel" layoutX="235.0" layoutY="245.0" prefWidth="200.0" text="Report Status " />
+
+        <Button layoutX="215.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleSubmitReport" prefWidth="125.0" text="Submit Report" />
+        <Button layoutX="360.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleBack" prefWidth="95.0" text="Back" />
+    </children>
+</AnchorPane>
