@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u8goal6Controller">
+<AnchorPane prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u8goal6Controller">
     <children>
         <Label layoutX="30.0" layoutY="25.0" text="Generate Daily Financial Summary Report">
             <font>
@@ -23,18 +23,16 @@
         <ComboBox fx:id="stationCombo" layoutX="180.0" layoutY="116.0" prefWidth="200.0" promptText="Choose Station" />
 
         <Label layoutX="30.0" layoutY="165.0" text="Total Ticket Sales:" />
-        <TextField fx:id="ticketSalesField" editable="false" layoutX="180.0" layoutY="161.0" prefWidth="200.0" />
+        <TextField fx:id="ticketSalesField" layoutX="180.0" layoutY="161.0" prefWidth="200.0" promptText="Enter Ticket Sales (BDT)" />
 
         <Label layoutX="30.0" layoutY="210.0" text="Card Recharge Revenue:" />
-        <TextField fx:id="cardRechargeField" editable="false" layoutX="180.0" layoutY="206.0" prefWidth="200.0" />
+        <TextField fx:id="cardRechargeField" layoutX="180.0" layoutY="206.0" prefWidth="200.0" promptText="Enter Card Recharge (BDT)" />
 
         <Label layoutX="30.0" layoutY="255.0" text="Total Daily Revenue:" />
-        <TextField fx:id="totalRevenueField" editable="false" layoutX="180.0" layoutY="251.0" prefWidth="200.0" />
+        <TextField fx:id="totalRevenueField" editable="false" layoutX="180.0" layoutY="251.0" prefWidth="200.0" promptText="Auto-calculated" />
 
-        <Button fx:id="generateBtn" layoutX="30.0" layoutY="310.0" onAction="#handleGenerateReport" text="Generate Report" />
-        <Button fx:id="saveBtn" layoutX="155.0" layoutY="310.0" onAction="#handleSaveReport" text="Save Report" />
-        <Button fx:id="Backbutton" layoutX="255.0" layoutY="310.0" onAction="#handleback" text="Back" />
-
-        <Label fx:id="statusLabel" layoutX="30.0" layoutY="365.0" text="Select date and station to generate report." />
+        <Button fx:id="generateBtn" layoutX="30.0" layoutY="315.0" onAction="#handleGenerateReport" text="Calculate Total" />
+        <Button fx:id="saveBtn" layoutX="150.0" layoutY="315.0" onAction="#handleSaveReport" text="Save Report" />
+        <Button fx:id="Backbutton" layoutX="255.0" layoutY="315.0" onAction="#handleback" text="Back" />
     </children>
 </AnchorPane>
