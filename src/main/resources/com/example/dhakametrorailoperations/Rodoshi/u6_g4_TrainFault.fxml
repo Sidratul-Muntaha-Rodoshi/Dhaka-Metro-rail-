@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rodoshi.u6_g4_TrainFaultController">
+    <children>
+        <ComboBox fx:id="trainPartComboBox" layoutX="235.0" layoutY="65.0" prefWidth="180.0" promptText="Train Part" />
+
+        <ComboBox fx:id="severityComboBox" layoutX="235.0" layoutY="115.0" prefWidth="180.0" promptText="Severity" />
+
+        <Text layoutX="145.0" layoutY="183.0" text="Description" />
+        <TextField fx:id="descriptionTextField" layoutX="235.0" layoutY="165.0" prefWidth="230.0" />
+
+        <Label fx:id="reportNumberLabel" layoutX="175.0" layoutY="230.0" prefWidth="150.0" text="Report Number" />
+        <Label fx:id="trainStatusLabel" layoutX="355.0" layoutY="230.0" prefWidth="160.0" text="Train Status " />
+
+        <Button layoutX="215.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleSubmitFault" prefWidth="125.0" text="Submit Fault" />
+        <Button layoutX="360.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleBack" prefWidth="95.0" text="Back" />
+    </children>
+</AnchorPane>
