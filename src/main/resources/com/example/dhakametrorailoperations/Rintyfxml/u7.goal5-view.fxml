@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal5Controller">
+<AnchorPane prefHeight="400.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal5Controller">
     <children>
         <Label layoutX="30.0" layoutY="25.0" text="Announce Train Delays and Important Updates">
             <font>
@@ -16,18 +16,16 @@
         </Label>
 
         <Label layoutX="30.0" layoutY="80.0" text="Select Train:" />
-        <ComboBox fx:id="trainCombo" layoutX="160.0" layoutY="76.0" prefWidth="230.0" promptText="Choose Train" />
+        <ComboBox fx:id="trainCombo" layoutX="160.0" layoutY="76.0" prefWidth="250.0" promptText="Choose Train" />
 
         <Label layoutX="30.0" layoutY="130.0" text="Message Type:" />
-        <ComboBox fx:id="messageTypeCombo" layoutX="160.0" layoutY="126.0" prefWidth="230.0" promptText="Choose Message Type" />
+        <ComboBox fx:id="messageTypeCombo" layoutX="160.0" layoutY="126.0" prefWidth="250.0" promptText="Choose Message Type" />
 
         <Label layoutX="30.0" layoutY="180.0" text="Message Preview:" />
-        <TextField fx:id="messagePreviewField" editable="false" layoutX="160.0" layoutY="176.0" prefWidth="230.0" />
+        <TextField fx:id="messagePreviewField" editable="false" layoutX="160.0" layoutY="176.0" prefWidth="360.0" promptText="Click Create Message to preview" />
 
         <Button fx:id="previewBtn" layoutX="30.0" layoutY="240.0" onAction="#handlePreviewMessage" text="Create Message" />
         <Button fx:id="sendBtn" layoutX="150.0" layoutY="240.0" onAction="#handleSendAnnouncement" text="Send Update" />
         <Button fx:id="Backbutton" layoutX="250.0" layoutY="240.0" onAction="#handleback" text="Back" />
-
-        <Label fx:id="statusLabel" layoutX="30.0" layoutY="300.0" text="Select a train and message type." />
     </children>
 </AnchorPane>

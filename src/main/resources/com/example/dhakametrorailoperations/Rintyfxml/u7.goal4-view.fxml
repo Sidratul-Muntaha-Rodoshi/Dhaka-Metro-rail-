@@ -7,27 +7,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="430.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal4Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal4Controller">
     <children>
-        <Label layoutX="30.0" layoutY="25.0" text="Control Passenger Flow (Crowded Hours)">
+        <Label layoutX="30.0" layoutY="25.0" text="Station Crowd Control Management">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
 
-        <Label layoutX="30.0" layoutY="80.0" text="Select Station Area:" />
-        <ComboBox fx:id="areaCombo" layoutX="170.0" layoutY="76.0" prefWidth="220.0" promptText="Choose Area" />
+        <Label layoutX="30.0" layoutY="80.0" text="Station Area:" />
+        <ComboBox fx:id="areaCombo" layoutX="165.0" layoutY="76.0" prefWidth="240.0" promptText="Select Station Area" />
 
-        <Label layoutX="30.0" layoutY="130.0" text="Select Control Level:" />
-        <ComboBox fx:id="levelCombo" layoutX="170.0" layoutY="126.0" prefWidth="220.0" promptText="Choose Level" />
+        <Label layoutX="30.0" layoutY="130.0" text="Current Crowd Status:" />
+        <TextField fx:id="crowdStatusField" editable="false" layoutX="165.0" layoutY="126.0" prefWidth="240.0" promptText="Click Check Crowd" />
 
-        <Label layoutX="30.0" layoutY="180.0" text="Crowd Status:" />
-        <TextField fx:id="crowdStatusField" editable="false" layoutX="170.0" layoutY="176.0" prefWidth="220.0" />
+        <Label layoutX="30.0" layoutY="180.0" text="Crowd Control Level:" />
+        <ComboBox fx:id="levelCombo" layoutX="165.0" layoutY="176.0" prefWidth="240.0" promptText="Select Control Level" />
 
-        <Button fx:id="checkBtn" layoutX="30.0" layoutY="240.0" onAction="#handleCheckCrowd" text="Check Crowd" />
-        <Button fx:id="applyBtn" layoutX="135.0" layoutY="240.0" onAction="#handleApplyControl" text="Apply Control" />
-        <Button fx:id="Backbutton" layoutX="245.0" layoutY="240.0" onAction="#handleback" text="Back" />
-
-        <Label fx:id="statusLabel" layoutX="30.0" layoutY="300.0" text="Select an area and control level." />
+        <Button fx:id="checkBtn" layoutX="30.0" layoutY="245.0" onAction="#handleCheckCrowd" text="Check Crowd" />
+        <Button fx:id="applyBtn" layoutX="140.0" layoutY="245.0" onAction="#handleApplyControl" text="Apply Control" />
+        <Button fx:id="Backbutton" layoutX="255.0" layoutY="245.0" onAction="#handleback" text="Back" />
     </children>
 </AnchorPane>
