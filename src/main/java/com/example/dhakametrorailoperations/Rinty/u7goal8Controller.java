@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class u7goal8Controller {
 
@@ -24,45 +25,66 @@ public class u7goal8Controller {
     @javafx.fxml.FXML
     private Button Backbutton;
 
+    private final ArrayList<u7goal8> expenseRequests = new ArrayList<>();
+    private final double stationBudgetLimit = 50000.0;
+
     @javafx.fxml.FXML
     public void initialize() {
-        shiftCombo.getItems().addAll("Morning Shift", "Evening Shift", "Night Shift");
-        conditionCombo.getItems().addAll("All Normal", "Minor Delay Occurred", "Equipment Issue Pending");
+        shiftCombo.getItems().addAll("Escalator & Lift Repair", "AFC Gate Maintenance", "Electrical & Lighting", "Emergency Civil Repair");
+        conditionCombo.getItems().addAll("Routine Maintenance", "Urgent - Operational Impact", "Emergency Safety Hazard");
     }
 
     @javafx.fxml.FXML
     public void handleCheckShift(ActionEvent actionEvent) {
-        String shift = shiftCombo.getValue();
+        String category = shiftCombo.getValue();
+        String costText = noteField.getText().trim();
 
-        if (shift == null) {
-            AlertHelper.showAlert(Alert.AlertType.WARNING, "Selection Missing", "Please select a shift first.");
+        if (category == null || costText.isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Input Missing", "Please select an Expense Category and enter Estimated Cost.");
             return;
         }
 
-        if (shift.equals("Night Shift")) {
-            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Night Shift Reminder", "Night Shift selected: Make sure all gates are locked before handover.");
+        double cost = Double.parseDouble(costText);
+        if (cost <= 0) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Invalid Cost", "Estimated cost must be greater than 0.");
+            return;
+        }
+
+        if (cost > stationBudgetLimit) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Exceeds Station Limit",
+                    "Requested BDT " + cost + " exceeds Station Limit (BDT " + stationBudgetLimit + ").\nRequires General Manager & Finance Approval!");
         } else {
-            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Shift Ready", shift + " selected. Ready to write handover note.");
+            double remaining = stationBudgetLimit - cost;
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Budget Available",
+                    "Within Station Limit! Remaining Petty Cash Budget after request: BDT " + remaining);
         }
     }
 
     @javafx.fxml.FXML
     public void handleSaveLog(ActionEvent actionEvent) {
-        String shift = shiftCombo.getValue();
-        String condition = conditionCombo.getValue();
-        String note = noteField.getText().trim();
+        String category = shiftCombo.getValue();
+        String urgency = conditionCombo.getValue();
+        String costText = noteField.getText().trim();
 
-        if (shift == null || condition == null) {
-            AlertHelper.showAlert(Alert.AlertType.WARNING, "Selection Missing", "Please select both shift and station condition.");
-            return;
-        }
-        if (note.isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.WARNING, "Note Required", "Please write a short handover note.");
+        if (category == null || urgency == null || costText.isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Input Missing", "Please select Category, Urgency Level, and enter Estimated Cost.");
             return;
         }
 
-        u7goal8 log = new u7goal8(shift, condition, note);
-        AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Shift Log Saved", "Shift log saved successfully!\n(" + shift + " - " + condition + ")");
+        double cost = Double.parseDouble(costText);
+        if (cost <= 0) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Invalid Cost", "Cost must be greater than 0.");
+            return;
+        }
+
+        u7goal8 request = new u7goal8(category, urgency, costText + " BDT");
+        expenseRequests.add(request);
+
+        AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Expense Request Submitted",
+                "Requisition ID: REQ-70" + expenseRequests.size() +
+                        "\nCategory: " + category + " (" + urgency + ")" +
+                        "\nAmount: BDT " + cost + " forwarded to Central Finance!");
+
         noteField.clear();
     }
 

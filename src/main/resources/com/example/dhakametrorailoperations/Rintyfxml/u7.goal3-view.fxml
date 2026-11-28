@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="420.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal3Controller">
     <children>
-        <Label layoutX="30.0" layoutY="25.0" text="Set Entry and Exit Modes for Ticket Gates">
+        <Label layoutX="30.0" layoutY="26.0" text="Set Entry and Exit Modes for Ticket Gates">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
