@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u8goal4Controller">
+    <children>
+        <Label layoutX="30.0" layoutY="25.0" text="Verify Bank Deposit">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="30.0" layoutY="75.0" text="Deposit ID:" />
+        <TextField fx:id="depositIdField" layoutX="175.0" layoutY="71.0" prefWidth="200.0" promptText="e.g. DEP-101" />
+
+        <Label layoutX="30.0" layoutY="120.0" text="Station Name:" />
+        <ComboBox fx:id="stationCombo" layoutX="175.0" layoutY="116.0" prefWidth="200.0" promptText="Select Station" />
+
+        <Label layoutX="30.0" layoutY="165.0" text="Slip Number:" />
+        <TextField fx:id="slipNumberField" layoutX="175.0" layoutY="161.0" prefWidth="200.0" promptText="e.g. SLP-501" />
+
+        <Label layoutX="30.0" layoutY="210.0" text="Recorded Revenue:" />
+        <TextField fx:id="recordedRevField" layoutX="175.0" layoutY="206.0" prefWidth="200.0" promptText="Enter Recorded Revenue" />
+
+        <Label layoutX="30.0" layoutY="255.0" text="Bank Branch:" />
+        <ComboBox fx:id="bankBranchCombo" layoutX="175.0" layoutY="251.0" prefWidth="200.0" promptText="Select Bank Branch" />
+
+        <Label layoutX="30.0" layoutY="300.0" text="Deposited Amount:" />
+        <TextField fx:id="depositedAmountField" layoutX="175.0" layoutY="296.0" prefWidth="200.0" promptText="Enter deposited amount" />
+
+        <Button fx:id="checkBtn" layoutX="30.0" layoutY="355.0" onAction="#handleCheckRevenue" text="Check Revenue" />
+        <Button fx:id="approveBtn" layoutX="150.0" layoutY="355.0" onAction="#handleApproveDeposit" text="Approve Deposit" />
+        <Button fx:id="Backbutton" layoutX="285.0" layoutY="355.0" onAction="#handleback" text="Back" />
+    </children>
+</AnchorPane>
