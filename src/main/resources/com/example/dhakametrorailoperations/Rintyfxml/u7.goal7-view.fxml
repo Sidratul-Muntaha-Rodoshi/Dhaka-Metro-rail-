@@ -8,23 +8,23 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.Rinty.u7goal7Controller">
     <children>
-        <Label layoutX="30.0" layoutY="25.0" text="Report Station Problems &amp; Equipment Failures">
+        <Label layoutX="30.0" layoutY="25.0" text="Prepare &amp; Submit Daily Cash Report">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
 
-        <Label layoutX="30.0" layoutY="80.0" text="Equipment Name:" />
-        <TextField fx:id="equipmentField" layoutX="170.0" layoutY="76.0" prefWidth="240.0" promptText="Enter Equipment Name" />
+        <Label layoutX="30.0" layoutY="80.0" text="Shift / Station:" />
+        <TextField fx:id="equipmentField" layoutX="170.0" layoutY="76.0" prefWidth="240.0" promptText="Enter Shift or Station Name" />
 
-        <Label layoutX="30.0" layoutY="130.0" text="Problem Level:" />
-        <TextField fx:id="priorityField" layoutX="170.0" layoutY="126.0" prefWidth="240.0" promptText="High / Medium / Low" />
+        <Label layoutX="30.0" layoutY="130.0" text="System Revenue (BDT):" />
+        <TextField fx:id="priorityField" layoutX="170.0" layoutY="126.0" prefWidth="240.0" promptText="Enter Total System Revenue" />
 
-        <Label layoutX="30.0" layoutY="180.0" text="Problem Details:" />
-        <TextField fx:id="detailsField" layoutX="170.0" layoutY="176.0" prefWidth="240.0" promptText="Write short note" />
+        <Label layoutX="30.0" layoutY="180.0" text="Vault Cash (BDT):" />
+        <TextField fx:id="detailsField" layoutX="170.0" layoutY="176.0" prefWidth="240.0" promptText="Enter Counted Vault Cash" />
 
-        <Button fx:id="submitBtn" layoutX="30.0" layoutY="240.0" onAction="#handleSubmitReport" text="Send Report" />
-        <Button fx:id="countBtn" layoutX="140.0" layoutY="240.0" onAction="#handleTotalReports" text="Total Reports" />
-        <Button fx:id="Backbutton" layoutX="260.0" layoutY="240.0" onAction="#handleback" text="Back" />
+        <Button fx:id="submitBtn" layoutX="30.0" layoutY="240.0" onAction="#handleSubmitReport" text="Submit Cash Report" />
+        <Button fx:id="countBtn" layoutX="184.0" layoutY="240.0" onAction="#handleTotalReports" text="Total Reports" />
+        <Button fx:id="Backbutton" layoutX="290.0" layoutY="240.0" onAction="#handleback" text="Back" />
     </children>
 </AnchorPane>
