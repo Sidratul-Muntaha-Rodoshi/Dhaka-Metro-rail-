@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="543.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.TasniahBashraat.u4_g7_TrainTechnicalProblemAnalysisViewController">
+   <children>
+      <Text layoutX="265.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Train Technical Problem Analysis">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="43.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Most Reported Problem:" />
+      <Text layoutX="43.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Problem Report Count:" />
+      <Button layoutX="43.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleTrainTechnicalProblemAnalyzeButton" text="Train Technical Problem Analysis" />
+      <Button layoutX="254.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleBackToDashboardButton" prefHeight="26.0" prefWidth="130.0" text="Back to Dashboard" />
+      <Label fx:id="mostReportedProblemLabel" layoutX="204.0" layoutY="120.0" text="Reported Problem" />
+      <Label fx:id="problemReportCountLabel" layoutX="203.0" layoutY="158.0" prefHeight="18.0" prefWidth="98.0" text="0" />
+      <TableView fx:id="trainTechnicalProblemAnalysisTableView" layoutX="43.0" layoutY="197.0" prefHeight="251.0" prefWidth="322.0">
+        <columns>
+          <TableColumn fx:id="rankCol" prefWidth="75.0" text="Rank" />
+          <TableColumn fx:id="reportedProblemCol" prefWidth="140.79998779296875" text="Reported Problem" />
+            <TableColumn fx:id="reportCountCol" prefWidth="105.60001220703123" text="Report Count" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
