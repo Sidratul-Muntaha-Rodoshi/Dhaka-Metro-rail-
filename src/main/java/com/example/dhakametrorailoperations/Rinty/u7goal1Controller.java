@@ -129,6 +129,6 @@ public class u7goal1Controller {
 
     @javafx.fxml.FXML
     public void handleback(ActionEvent actionEvent) {
-        SceneSwitcher.switchScene(actionEvent, "com.examples.stationcontrollerdashboard-view.fxml");
+        SceneSwitcher.switchScene(actionEvent, "/com/example/dhakametrorailoperations/Rintyfxml/stationcontrollerdashboard-view.fxml");
     }
 }

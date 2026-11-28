@@ -1,5 +1,6 @@
 package com.example.dhakametrorailoperations.Rinty;
 
+import commonClass.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -48,5 +49,6 @@ public class u8goal7Controller {
 
     @javafx.fxml.FXML
     public void handleback(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene(actionEvent, "/com/example/dhakametrorailoperations/Rintyfxml/financeofficerdashboard-view.fxml");
     }
 }

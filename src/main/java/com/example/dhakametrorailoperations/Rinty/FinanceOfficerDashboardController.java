@@ -8,42 +8,42 @@ public class FinanceOfficerDashboardController {
 
     @FXML
     private void handleopengoal1(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal1-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal1-view.fxml");
     }
 
     @FXML
     private void handleopengoal2(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal2-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal2-view.fxml");
     }
 
     @FXML
     private void handleopengoal3(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal3-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal3-view.fxml");
     }
 
     @FXML
     private void handleopengoal4(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal4-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal4-view.fxml");
     }
 
     @FXML
     private void handleopengoal5(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal5-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal5-view.fxml");
     }
 
     @FXML
     private void handleopengoal6(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal6-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal6-view.fxml");
     }
 
     @FXML
     private void handleopengoal7(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal7-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal7-view.fxml");
     }
 
     @FXML
     private void handleopengoal8(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8goal8-view.fxml");
+        SceneSwitcher.switchScene(event, "/com/example/dhakametrorailoperations/Rintyfxml/u8.goal8-view.fxml");
     }
 
     @FXML
