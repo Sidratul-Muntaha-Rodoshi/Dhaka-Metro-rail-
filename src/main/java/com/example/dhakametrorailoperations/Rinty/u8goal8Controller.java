@@ -1,10 +1,13 @@
 package com.example.dhakametrorailoperations.Rinty;
 
+import commonClass.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+//
+
 
 public class u8goal8Controller {
 
@@ -53,9 +56,16 @@ public class u8goal8Controller {
 
     @javafx.fxml.FXML
     public void handleClear(ActionEvent actionEvent) {
+        monthCombo.setValue(null);
+        stationCombo.setValue(null);
+        totalRevenueField.clear();
+        totalExpenseField.clear();
+        netBalanceField.clear();
+        statusLabel.setText("Fields cleared.");
     }
 
     @javafx.fxml.FXML
     public void handleback(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene(actionEvent, "/com/example/dhakametrorailoperations/Rintyfxml/financeofficerdashboard-view.fxml");
     }
 }
