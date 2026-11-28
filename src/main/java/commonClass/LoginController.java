@@ -42,7 +42,7 @@ public class LoginController
         String password = passwordTF.getText();
         labelErrorLabel.setText("");
 
-        // Process-1 Event-2: Format Validation
+        // Validation
         String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,}$";
 
         if (userId.isEmpty() || !password.matches(passwordPattern)) {
@@ -50,7 +50,7 @@ public class LoginController
             passwordTF.clear();
             return;
     }
-        // Process-1 Event-3: Credential Verification
+        // Verification
         User matchedUser = null;
         for (User u : getDummyUsers()) {
             if (u.getUserId().equals(userId) && u.getPassword().equals(password)) {
@@ -69,8 +69,7 @@ public class LoginController
             alert.showAndWait();
             return;
         }
-
-        // Process-1 Event-4 & Event-5: Session তৈরি ও Role অনুযায়ী ড্যাশবোর্ডে পাঠানো
+        //session onujayi dashboard e pathanor jonno
         SessionManager.setCurrentUser(matchedUser);
         routeToRoleDashboard(matchedUser.getRole(), actionEvent);
     }
@@ -84,7 +83,7 @@ public class LoginController
             case "Ticket Counter Officer" -> "/ticketcounter/TicketCounterDashboard.fxml";
             case "Metro Train Operator" -> "/trainoperator/TrainOperatorDashboard.fxml";
             case "Station Controller" -> "/com/example/dhakametrorailoperations/Rintyfxml/stationcontrollerdashboard-view.fxml";
-            case "Central Finance Officer" -> "/finance/FinanceOfficerDashboard.fxml";
+            case "Central Finance Officer" -> "/com/example/dhakametrorailoperations/Rintyfxml/financeofficerdashboard-view.fxml";
             default -> "";
         };
 
