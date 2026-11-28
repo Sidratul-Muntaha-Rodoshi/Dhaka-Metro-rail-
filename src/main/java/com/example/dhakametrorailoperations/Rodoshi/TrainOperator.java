@@ -40,4 +40,5 @@ public class TrainOperator extends User {
                 ", assignedTrainId=" + assignedTrainId +
                 '}';
     }
+    /// ///
 }
