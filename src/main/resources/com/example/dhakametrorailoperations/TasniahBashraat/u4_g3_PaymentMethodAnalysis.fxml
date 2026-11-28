@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="631.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.TasniahBashraat.u4_g3_PaymentMethodAnalysisViewController">
+   <children>
+      <Text layoutX="346.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method Analysis">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="59.0" layoutY="92.0" mnemonicParsing="false" onAction="#handlePaymentMethodAnalyzeButton" text="Payment Method Analysis" />
+      <Button layoutX="244.0" layoutY="92.0" mnemonicParsing="false" onAction="#handleBackToDashboardButton" prefHeight="26.0" prefWidth="123.0" text="Back to Dashboard" />
+      <Text layoutX="59.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Most Common Payment Method:" />
+      <Text layoutX="59.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction Count:" />
+      <Label fx:id="mostCommonPaymentMethodLabel" layoutX="244.0" layoutY="151.0" prefHeight="18.0" prefWidth="99.0" text="Payment Method" />
+      <Label fx:id="transactionCountLabel" layoutX="244.0" layoutY="193.0" prefHeight="18.0" prefWidth="90.0" text="0" />
+      <TableView fx:id="paymentMethodAnalysisTableView" layoutX="47.0" layoutY="278.0" prefHeight="248.0" prefWidth="342.0">
+        <columns>
+          <TableColumn fx:id="rankCol" prefWidth="75.0" text="Rank" />
+          <TableColumn fx:id="paymentMethodCol" prefWidth="119.19998931884766" text="Payment Method" />
+            <TableColumn fx:id="transactionCountCol" prefWidth="144.800048828125" text="Transaction Count" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
