@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="535.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dhakametrorailoperations.TasniahBashraat.u4_DataAnalystOfficerDashboardViewController">
+   <children>
+      <Text layoutX="247.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Analyst Officer Dashbaord">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="95.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleMetroRouteAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="Metro Route Analysis" />
+      <Button layoutX="95.0" layoutY="202.0" mnemonicParsing="false" onAction="#handleBusiestTravelDateAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="Busiest Travel Date Analysis" />
+      <Button layoutX="95.0" layoutY="300.0" mnemonicParsing="false" onAction="#handlePaymentMethodAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="Payment Method Analysis" />
+      <Button layoutX="95.0" layoutY="396.0" mnemonicParsing="false" onAction="#handlePassRechargeAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="MRT Pass Recharge Analysis" />
+      <Button layoutX="399.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleTrainDelayAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="Train Delay Analysis" />
+      <Button layoutX="399.0" layoutY="202.0" mnemonicParsing="false" onAction="#handlePassReplacementAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="MRT Pass Replacement Analysis" />
+      <Button layoutX="399.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleTrainTechnicalProblemAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="Train Technical Problem Analysis" />
+      <Button layoutX="399.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleSecurityIncidentAnalysisButton" prefHeight="26.0" prefWidth="190.0" text="Security Incident Analysis" />
+      <Button layoutX="557.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="113.0" text="Logout" />
+   </children>
+</AnchorPane>
