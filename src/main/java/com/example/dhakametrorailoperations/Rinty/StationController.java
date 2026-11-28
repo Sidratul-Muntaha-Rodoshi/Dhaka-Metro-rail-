@@ -47,7 +47,7 @@ public class StationController extends User {
     public void setControllerPin(String controllerPin) {
         this.controllerPin = controllerPin;
     }
-
+//
     @Override
     public String toString() {
         return "StationController{" +
