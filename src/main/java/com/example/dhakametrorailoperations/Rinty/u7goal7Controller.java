@@ -28,20 +28,36 @@ public class u7goal7Controller {
 
     @javafx.fxml.FXML
     public void handleSubmitReport(ActionEvent actionEvent) {
-        String equipment = equipmentField.getText().trim();
-        String priority = priorityField.getText().trim();
-        String details = detailsField.getText().trim();
+        String shiftStation = equipmentField.getText().trim();
+        String sysRevText = priorityField.getText().trim();
+        String vaultCashText = detailsField.getText().trim();
 
-        if (equipment.isEmpty() || priority.isEmpty() || details.isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.WARNING, "Input Missing", "Please fill in equipment, problem level, and details.");
+        if (shiftStation.isEmpty() || sysRevText.isEmpty() || vaultCashText.isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Input Missing", "Please enter Shift/Station, System Revenue, and Vault Cash.");
             return;
         }
 
-        u7goal7 report = new u7goal7(equipment, priority, details);
+        double systemRevenue = Double.parseDouble(sysRevText);
+        double vaultCash = Double.parseDouble(vaultCashText);
+
+        if (systemRevenue < 0 || vaultCash < 0) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Invalid Amount", "Cash amounts cannot be negative.");
+            return;
+        }
+
+        double variance = vaultCash - systemRevenue;
+        String status = (variance == 0) ? "Balanced" : "Discrepancy (" + variance + " BDT)";
+
+        u7goal7 report = new u7goal7(shiftStation, status, "Sys: " + systemRevenue + " | Vault: " + vaultCash);
         reportList.add(report);
 
-        AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Report Submitted",
-                "Report added for " + equipment + ".\nTotal Reports Submitted: " + reportList.size());
+        if (variance != 0) {
+            AlertHelper.showAlert(Alert.AlertType.WARNING, "Cash Discrepancy Detected",
+                    "Shift: " + shiftStation + "\nVariance: BDT " + variance + "\nReport logged & sent to Finance!");
+        } else {
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Daily Cash Report Submitted",
+                    "Cash Balanced (0.0 BDT variance) for " + shiftStation + ".\nReport sent to Central Finance! Total Reports: " + reportList.size());
+        }
 
         equipmentField.clear();
         priorityField.clear();
@@ -51,11 +67,12 @@ public class u7goal7Controller {
     @javafx.fxml.FXML
     public void handleTotalReports(ActionEvent actionEvent) {
         if (reportList.isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Total Reports", "No problem reports submitted yet (Total: 0).");
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Cash Reports", "No daily cash reports submitted yet (Total: 0).");
         } else {
             u7goal7 lastReport = reportList.get(reportList.size() - 1);
-            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Total Reports",
-                    "Total Reports Submitted: " + reportList.size() + "\nLast Reported: " + lastReport.getEquipment() + " (" + lastReport.getPriority() + ")");
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Submitted Cash Reports",
+                    "Total Cash Reports Sent to Finance: " + reportList.size() +
+                            "\nLast Shift: " + lastReport.getEquipment() + " (" + lastReport.getPriority() + ")");
         }
     }
 
