@@ -80,6 +80,9 @@ public class LoginController
             case "Security Officer" -> "/security/SecurityOfficerDashboard.fxml";
             case "MRT Pass Officer" -> "/mrtpass/MrtPassOfficerDashboard.fxml";
             case "Data Analyst Officer" -> "/dataanalyst/DataAnalystDashboard.fxml";
+            case "Ticket Counter Officer" -> "/com/example/dhakametrorailoperations/Rodoshi/u5_TicketOfficerDashBoard.fxml";
+            case "Metro Train Operator" -> "/com/example/dhakametrorailoperations/Rodoshi/u6_TrainOperatorDashBoard.fxml";
+            case "Station Controller" -> "/stationcontroller/StationControllerDashboard.fxml";
             case "Ticket Counter Officer" -> "/ticketcounter/TicketCounterDashboard.fxml";
             case "Metro Train Operator" -> "/trainoperator/TrainOperatorDashboard.fxml";
             case "Station Controller" -> "/com/example/dhakametrorailoperations/Rintyfxml/stationcontrollerdashboard-view.fxml";
